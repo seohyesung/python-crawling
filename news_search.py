@@ -14,8 +14,7 @@ def search_news():
         response = requests.get(url, headers=headers)
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # 뉴스 제목이 들어있는 태그 (구글 뉴스의 기본 구조)
-        # 구글은 보안이 강하지 않아 h3 태그로 제목을 쉽게 가져올 수 있습니다.
+        # 뉴스 제목이 들어있는 태그
         titles = soup.find_all('h3')
 
         if not titles:
